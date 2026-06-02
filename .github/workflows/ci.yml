@@ -1,0 +1,15 @@
+name: Primeiro Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  teste:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Olá Mundo"
+      - run: date
+      - run: uname -a
