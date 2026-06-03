@@ -44,3 +44,18 @@ jobs:
         mkdir build
         cp -r src package.json package-lock.json build/
         echo "Deploy simulado com sucesso!"
+
+  # -------------------------------------------------------
+  # ETAPA 2: CD (Entrega Contínua) - Só roda em Push na Main se o CI passar (não testei)
+  # -------------------------------------------------------
+  # deploy-to-render:
+  #   needs: build-and-test
+  #   runs-on: ubuntu-latest
+  #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+  #   steps:
+  #   - name: Disparar Deploy no Render via Webhook
+  #     run: |
+  #       echo "Iniciando o deploy no Render..."
+  #       curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
+  #       echo "Deploy solicitado com sucesso!"
