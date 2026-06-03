@@ -6,9 +6,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/soma/:a/:b', (req, res) => {
-    // const resultado = Number(req.params.a) + Number(req.params.b);
-    const resultado = Number(req.params.a) - Number(req.params.b);
+    const resultado = Number(req.params.a) + Number(req.params.b);
+    // const resultado = Number(req.params.a) - Number(req.params.b);
     res.json({ resultado });
 });
 
-module.exports = app; // exporta para os testes
+module.exports = app;
